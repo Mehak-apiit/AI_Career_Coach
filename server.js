@@ -8,6 +8,7 @@ const testRoutes = require('./routes/testRoute');
 const aiRoutes = require("./routes/aiRoutes");
 const resumeRoutes = require("./routes/resumeRoutes");
 const roadmapRoutes = require("./routes/roadmapRoutes");
+const skillGapRoutes = require("./routes/skillGapRoutes");
 const app = express();
 
 //Middlewares
@@ -18,6 +19,7 @@ app.use('/api/ai', testRoutes);
 app.use('/api/ai',aiRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/roadmap",roadmapRoutes);
+app.use("/api/skills",skillGapRoutes);
 
 //Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
