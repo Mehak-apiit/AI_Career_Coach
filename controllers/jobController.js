@@ -1,10 +1,10 @@
 const { GoogleGenAI } = require("@google/genai");
 const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
-const SkillGap = require("../models/SkillGap");
+const Job = require("../models/Job");
 
-const analyzeSkillGap = async (req, res)=>{
+const recommendJobs = async (req, res)=>{
     try {
-        const {careerGoal,currentSkills} = req.body;
+        const {skills} = req.body;
         console.log(req.body);
         const skillsJson = JSON.stringify(currentSkills);
         console.log(skillsJson);
